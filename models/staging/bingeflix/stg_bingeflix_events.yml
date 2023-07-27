@@ -7,7 +7,7 @@ models:
         tests:
           - not_null
 
-      - name: created_at
+      - name: event_created_at
         description: When the event was logged.
         tests:
           - not_null

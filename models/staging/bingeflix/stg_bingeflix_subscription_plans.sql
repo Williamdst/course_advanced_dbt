@@ -8,8 +8,8 @@ renamed as (
 
     select
         subscription_plan_id,
-        plan_name,
-        pricing,
+        plan_name as subscription_name,
+        TO_NUMBER(pricing, 6, 2) as subscription_price,
         payment_period
 
     from source

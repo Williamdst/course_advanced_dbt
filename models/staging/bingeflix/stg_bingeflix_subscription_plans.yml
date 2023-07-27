@@ -10,12 +10,12 @@ models:
           - accepted_values:
               values: [1, 2, 3]
 
-      - name: plan_name
+      - name: subscription_name
         description: The name of the subscription plan.
         tests:
           - not_null
 
-      - name: pricing
+      - name: subscription_price
         description: The price of the subscription.
         tests:
           - not_null
