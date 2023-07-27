@@ -1,6 +1,10 @@
-with
+with source as (
 
-source as (
+    select * from {{ source('bingeflix', 'users') }}
+
+),
+
+renamed as (
     select
         user_id,
         created_at as user_created_at,
@@ -13,7 +17,7 @@ source as (
         birthdate,
         region,
         country
-    from {{ source('bingeflix', 'users') }}
+    from source
 )
 
-select * from source
+select * from renamed
