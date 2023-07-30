@@ -8,7 +8,7 @@ renamed AS (
 
     SELECT
         session_id,
-        created_at as event_created_at,
+        created_at AS event_created_at,
         user_id,
         event_name,
         event_id
