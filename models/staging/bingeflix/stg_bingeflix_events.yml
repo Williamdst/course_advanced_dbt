@@ -1,6 +1,7 @@
 models:
   - name: stg_bingeflix_events
-    description: This table contains information about the behavioral events.
+    description: >
+      This table contains information about the behavioral events that users perform in the Bingeflix application.
     columns:
       - name: session_id
         description: The unique identifier of the session in the Bingeflix application.
