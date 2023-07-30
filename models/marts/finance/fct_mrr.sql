@@ -8,12 +8,12 @@ monthly_subscriptions AS (
     SELECT
         subscription_id,
         user_id,
-        starts_at,
-        ends_at,
-        plan_name,
-        pricing,
-        DATE(DATE_TRUNC('month', starts_at)) AS start_month,
-        DATE(DATE_TRUNC('month', ends_at)) AS end_month
+        subscription_starts_at,
+        subscription_ends_at,
+        subscription_name,
+        subscription_price,
+        DATE(DATE_TRUNC('month', subscription_starts_at)) AS start_month,
+        DATE(DATE_TRUNC('month', subscription_ends_at)) AS end_month
     FROM
         {{ ref('dim_subscriptions') }}
     WHERE
@@ -36,10 +36,10 @@ subscription_periods AS (
     SELECT
         subscription_id,
         user_id,
-        plan_name,
-        pricing AS monthly_amount,
-        starts_at,
-        ends_at,
+        subscription_name,
+        subscription_price AS monthly_amount,
+        subscription_starts_at,
+        subscription_ends_at,
         start_month,
 
         -- For users that cancel in the first month, set their end_month to next month because the subscription remains active until the end of the first month
@@ -169,9 +169,9 @@ final AS (
         mrr_with_changes.date_month,
         mrr_with_changes.user_id,
         mrr_with_changes.subscription_id,
-        subscription_periods.starts_at,
-        subscription_periods.ends_at,
-        subscription_periods.plan_name,
+        subscription_periods.subscription_starts_at,
+        subscription_periods.subscription_ends_at,
+        subscription_periods.subscription_name,
         mrr AS mrr_amount,
         mrr_change,
         LEAST(mrr, previous_month_mrr_amount) AS retained_mrr_amount,
