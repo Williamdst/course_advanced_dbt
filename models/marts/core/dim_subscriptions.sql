@@ -5,11 +5,11 @@ final AS (
         s.subscription_id,
         s.subscription_plan_id,
         s.user_id,
-        s.starts_at,
-        s.ends_at,
-        sp.plan_name,
-        sp.pricing,
-        sp.payment_period AS billing_period
+        s.subscription_starts_at,
+        s.subscription_ends_at,
+        sp.subscription_name,
+        sp.subscription_price,
+        sp.billing_period
     FROM
         {{ ref('stg_bingeflix_subscriptions') }} AS s
         LEFT JOIN {{ ref('stg_bingeflix_subscription_plans') }} AS sp

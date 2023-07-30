@@ -20,20 +20,20 @@ models:
         tests:
           - not_null
 
-      - name: starts_at
+      - name: subscription_starts_at
         description: When the subscription started.
         tests:
           - not_null
 
-      - name: ends_at
+      - name: subscription_ends_at
         description: When the subscription ends.
 
-      - name: plan_name
+      - name: subscription_name
         description: The name of the subscription plan.
         tests:
           - not_null
 
-      - name: pricing
+      - name: subscription_price
         description: The monthly cost of the subscription.
         tests:
           - not_null

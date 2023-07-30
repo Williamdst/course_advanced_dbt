@@ -12,12 +12,12 @@ models:
         tests:
           - not_null
 
-      - name: starts_at
+      - name: subscription_starts_at
         description: When the subscription started (in UTC)
         tests:
           - not_null
 
-      - name: ends_at
+      - name: subscription_ends_at
         description: When the subscription ends (in UTC). This value is NULL if the subscription is active.
 
       - name: subscription_id
