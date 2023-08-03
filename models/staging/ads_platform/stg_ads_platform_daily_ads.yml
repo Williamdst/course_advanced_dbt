@@ -25,14 +25,14 @@ models:
 
       - name: cost_per_thousand_impressions
         description: >
-          The cost charged (in $USD) by the ads platform per thousand impressions. 
+          The cost charged (in $USD) by the ads platform per thousand impressions.
           [Understanding Impressions](https://www.bigcommerce.com/ecommerce-answers/impressions-digital-marketing/)
         tests:
           - not_null
 
       - name: campaign_click_through_rate
         description: >
-          The click through rate on the campaign impressions. 
+          The click through rate on the campaign impressions.
           [Understanding Click Through Rates](https://www.wordstream.com/click-through-rate)
         tests:
           - not_null
