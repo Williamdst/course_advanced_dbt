@@ -9,12 +9,9 @@ repos:
   rev: 2.1.2
   hooks:
     - id: sqlfluff-lint
-      additional_dependencies: [
-        'dbt-snowflake==1.5.2',
-        'sqlfluff-templater-dbt==2.1.2'
-      ]
-    - id: sqlfluff-fix
-      stages: [manual]  # this command is available only to run manually
+      name: sqlfluff-lint
+      description: "Lints sql files with `SQLFluff`"
+      stages: [pre-push]
       additional_dependencies: [
         'dbt-snowflake==1.5.2',
         'sqlfluff-templater-dbt==2.1.2'
