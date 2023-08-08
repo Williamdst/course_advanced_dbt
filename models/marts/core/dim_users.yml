@@ -71,3 +71,9 @@ models:
         description: Where the user lives.
         tests:
           - not_null
+
+      - name: first_subscription_starts_at
+        description: The first time a user signed up for a Bingeflix subscription.
+
+      - name: count_of_subscriptions
+        description: The number of different subscriptions a user has had.

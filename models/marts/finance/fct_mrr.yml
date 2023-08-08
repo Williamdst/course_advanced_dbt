@@ -19,14 +19,14 @@ models:
       - name: subscription_id
         description: The unique identifier for the subscription.
 
-      - name: starts_at
+      - name: subscription_starts_at
         description: When the subscription started.
 
-      - name: ends_at
+      - name: subscription_ends_at
         description: >
           When the subscription ended. This value is NULL if the subscription has not had auto-renew turned off.
 
-      - name: plan_name
+      - name: subscription_name
         description: The name of the subscription plan.
 
       - name: mrr_amount
