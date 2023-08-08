@@ -4,3 +4,18 @@ repos:
   hooks:
     - id: check-yaml
     - id: end-of-file-fixer
+
+- repo: https://github.com/sqlfluff/sqlfluff
+  rev: 2.1.2
+  hooks:
+    - id: sqlfluff-lint
+      additional_dependencies: [
+        'dbt-snowflake==1.5.2',
+        'sqlfluff-templater-dbt==2.1.2'
+      ]
+    - id: sqlfluff-fix
+      stages: [manual]  # this command is available only to run manually
+      additional_dependencies: [
+        'dbt-snowflake==1.5.2',
+        'sqlfluff-templater-dbt==2.1.2'
+      ]
