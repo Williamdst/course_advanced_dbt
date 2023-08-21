@@ -34,5 +34,5 @@ repos:
   - id: check-model-has-all-columns # Ensures that mart models have all columns in the database also specified in the .yml
     files: ^models/marts
   - id: check-model-tags
-    args: ["--tags", "hourly", "daily", "monthly", "--"]
+    args: ["--tags", "hourly", "daily", "monthly", "unit_testing", "--"]
     fields: ^models/
