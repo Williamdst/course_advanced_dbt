@@ -1,0 +1,25 @@
+version: 2
+
+
+models:
+  - name: agg_mrr
+    description: An aggregated view of MRR by month
+    config:
+      tags: ['unit_testing']
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('uit_agg_mrr_output')
+          tags: ['unit_testing']
+    columns:
+      - name: date_month
+        description: The month of the MRR in the format 'YYYY-MM-01'
+        tests:
+          - not_null
+          - unique
+
+      - name: mrr_amount
+        description: An aggregated sum of the MRR for the month
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"

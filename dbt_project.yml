@@ -19,16 +19,24 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+vars:
+  unit_testing: 'false'
+
 on-run-end: "{{ dbt_project_evaluator.print_dbt_project_evaluator_issues() }}"
 
 seeds:
+  course_advanced_dbt:
+    unit_testing:
+      +tags: ['unit_testing']
+
   dbt_project_evaluator:
     dbt_project_evaluator_exceptions:
       +enabled: false
 
 
+
 models:
-  advanced_dbt:
+  course_advanced_dbt:
     +materialized: view
     +grants:
       select: ['transformer', 'reporter']

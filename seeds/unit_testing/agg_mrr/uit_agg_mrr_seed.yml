@@ -1,0 +1,22 @@
+version: 2
+
+
+seeds:
+  - name: uit_agg_mrr_input
+    description: The input for the unit testing of the agg_mrr model
+    docs:
+      show: true
+    config:
+      column_types:
+        DATE_MONTH: DATE
+        USER_ID: INT
+        MRR_AMOUNT: FLOAT
+
+  - name: uit_agg_mrr_output
+    description: The output for the unit testing of the agg_mrr model
+    docs:
+      show: true
+    config:
+      column_types:
+        DATE_MONTH: DATE
+        MRR_AMOUNT: FLOAT
